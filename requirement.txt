@@ -1,0 +1,3 @@
+需要下載的資料
+1. IMDB.csv
+2. glove.6B.100d.txt
