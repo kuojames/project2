@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block title %}Test{% endblock %}
+
+{% block content %}
+
+<style>
+    #font1{
+        color:#F5F5F5;
+    }
+    #body-test{
+        background-color:#191128;
+    }
+    #menu{
+        width:10%;
+        float:left;
+        color:#0b8699;
+        text-align:center;
+        margin:10px 0px;
+    }
+    #content{
+        background-color:#2c1c47;
+        width:88%;
+        height:100%;
+        float:right;
+        border:1px solid #000;
+        border-radius:10px;
+        margin:10px;
+    }
+    #set1{
+        margin:0px 0px 20px 0px;
+        padding:0px 0px 0px 160px;
+    }
+    #wav{
+        margin:0px 0px 0px 100px;
+        float:left;
+    }
+    #report{
+        margin:20px 150px 0px 10px;
+        width:200px;
+        float:right;
+    }
+    #set2{
+        margin:0px 0px 0px 20px;
+    }
+    #Area1{
+        background-color:#462978;
+        width:800px;
+        height:315px;
+        border:1px outset #000;
+        border-radius:10px;
+        margin:20px 0px 20px 250px;
+    }
+    #Area2{
+        background-color:#462978;
+        width:400px;
+        height:400px;
+        border:1px outset #000;
+        border-radius:10px;
+        margin:0px 20px 20px 100px;
+        padding:10px 0px 0px 0px;
+        float:left;
+    }
+    #Area3{
+        background-color:#462978;
+        width:690px;
+        height:400px;
+        border:1px outset #000;
+        border-radius:10px;
+        margin:0px 100px 20px 20px;
+        float:left;
+    }
+    #trend_picture{
+        width:600px;
+        height:350px;
+        margin:10px 0px 10px 40px;
+    }
+    #Area4{
+        background-color:#462978;
+        width:540px;
+        height:400px;
+        border:1px outset #000;
+        border-radius:10px;
+        margin:0px 40px 10px 100px;
+        float:left;
+    }
+    #probability_picture{
+        width:500px;
+        height:350px;
+        margin:30px 0px 0px 20px;
+    }
+    #Area5{
+        background-color:#462978;
+        width:540px;
+        height:400px;
+        border:1px outset #000;
+        border-radius:10px;
+        margin:0px 10px;
+        float:left;
+    }
+    #account_number{
+        width:500px;
+        height:350px;
+        margin:30px 0px 0px 20px;
+    }
+    #Area6{
+        background-color:#462978;
+        width:1130px;
+        height:400px;
+        border:1px outset #000;
+        border-radius:10px;
+        margin:0px 40px 10px 100px;
+        float:left;
+    }
+</style>
+
+<body id="body-test">
+
+    <nav class="menu">
+        <ul id="menu" class="list-group">
+            <li class="list-group-item" style="color:red">偵測到Sad</li>
+            <li class="list-group-item">偵測到Sad</li>
+            <li class="list-group-item">偵測到Scream</li>
+            <li class="list-group-item">偵測到Sigh</li>
+            <li class="list-group-item">偵測到Wail</li>
+            <li class="list-group-item">偵測到Happy</li>
+            <li class="list-group-item">偵測到Sad</li>
+            <li class="list-group-item">偵測到Scream</li>
+            <li class="list-group-item">偵測到Sigh</li>
+            <li class="list-group-item">偵測到Wail</li>
+            <li class="list-group-item">偵測到Happy</li>
+            <li class="list-group-item">偵測到Sad</li>
+            <li class="list-group-item">偵測到Scream</li>
+            <li class="list-group-item">偵測到Sigh</li>
+            <li class="list-group-item">偵測到Wail</li>
+        </ul>
+    </nav>
+
+    <div id="content">
+
+        <div style="padding:10px 0px 10px 30px">
+            <h1 style="color:white">分析報告</h1>
+        </div>
+
+        <div id="Area1">
+            <div style="padding:5px 0px; color:white;">
+                <h3 style="text-align:center;">偵測音訊</h3>
+            </div>
+            <div id="wav">
+                <img src='/static/images/wav.png' width='600'>
+                <div style="margin:10px 0px 0px 0px" align="center">
+                    <audio controls>
+                        <source src="/static/images/example.wav/" type="audio/wav">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div id="Area2">
+            <div style="color:white" align="center">
+                <h4 style="font-weight:bold">偵測報告</h4>
+            </div>
+            <div style="color:white; padding:10px 0px 0px 60px" align="left">
+                <h4 >使用者 : 陳小春</h4>
+                <h4 >IP : 120.85.61.113</h4>
+                <h4 >情緒 : Sad</h4>
+            </div>
+            <div style="padding:10px 0px" align="center">
+                <img src='/static/images/cry.jpg' width='300'>
+            </div>
+        </div>
+        <div id="Area3">
+            <div style="color:white" align="center">
+                <h4 style="font-weight:bold">危險事件發生趨勢</h4>
+            </div>
+            <div id="trend_picture" align="center">
+                <img src='/static/images/p3.png' width='500' height="340">
+            </div>
+        </div>
+
+        <div id="Area4">
+            <div style="color:white; padding:10px 0px 0px 0px" align="center">
+                <h4 style="font-weight:bold">偵測情緒準確率</h4>
+            </div>
+            <div id="probability_picture" align="center">
+                <img src='/static/images/p1.jpg' width='400' height='300'>
+            </div>
+        </div>
+
+        <div id="Area5">
+            <div style="color:white; padding:10px 0px 0px 0px" align="center">
+                <h4 style="font-weight:bold">情緒事件統計值</h4>
+            </div>
+            <div id="probability_picture" align="center">
+                <img src='/static/images/p2.png' width='400' height='300'>
+            </div>
+        </div>
+
+        <div id="Area6">
+            <div style="color:white; padding:10px 0px 0px 0px" align="center">
+                <h2 style="font-weight:bold">分析報告</h2>
+            </div>
+            <div style="color:white; padding:10px 0px 0px 60px" align="left">
+                <h4 >本次預測準確率 : 陳小春發生哭聲的機率是90%</h4><br>
+                <h4 >趨勢分析 : 陳小春最近周圍發生危險聲音的次數上升20%，請注意陳小春是否安全</h4><br>
+                <h4 >危險事件分析 : (五日內) 哭聲100件，尖叫聲50件，危險事件增加36%</h4><br>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}首頁{% endblock %}
+
+{% block content %}
+    
+    {% load account %}
+    {% load mvote_extras %}
+
+    <div class="container">
+        {% if username %}
+            
+            <div class="row">
+                <div clss="md-12" align="center"><h2>登入了，{{username}}</h2></div>
+            </div>
+
+            <div class="row">
+                
+                <button class="btn btn-info">
+                    日前是第{{polls.number}}頁
+                </button>
+                
+                {% if polls.has_previous %}
+                    <button class="btn btn-info">
+                        <a href='?p={{polls.previous_page_number}}'>上一頁</a>
+                    </button>
+                {% endif %}
+                
+                {% if polls.has_next %}
+                    <button class="btn btn-info">
+                        <a href='?p={{polls.next_page_number}}'>下一頁</a>
+                    </button>   
+                {% endif %}
+
+                {% for poll in polls %}
+                    {% if forloop.first %}
+                        <div class='list-group'>
+                    {% endif %}
+                    <a href='{% url "voting-url" poll.id %}' class='list-group-item'>
+                        <span class='glyphicon glpyhicon-check'></span>
+                        總票數 : {{poll.id | show_votes}},
+                        總項目 : {{poll.id | show_items}},
+                        {{poll.name}}, add_by[{{poll.user}}], created t {{poll.created_at}}
+                    </a>
+                    {% if forloop.last %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        {% else %}
+            <div class="row">
+                <div clss="md-12" align="center"><h2>尚未登入</h2></div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+
+
+

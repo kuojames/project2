@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}使用者資料{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h3>使用者資訊</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading" align="center"> {{profile.user.username}} </div>
+            </div>
+            <div class="panel panel-body">
+                電子郵件 : {{profile.user.email}}<br/>
+                身高 : {{profile.height}}cm<br/>
+                性別 : {{profile.male}}
+                個人網站 : <a href="{{profile.website}}">{{profile.website}}</a>
+            </div>
+        </div>
+    </div>
+    <form name="myform" action="/userinfo/" method="POST">
+        {% csrf_token %}
+        <table>
+            <label>{{profile_form.height.label}}</label>
+            {{profile_form.height}}<br>
+            <label>{{profile_form.male.label}}</label>
+            {{profile_form.male}}<br>
+            <label>{{profile_form.website.label}}</label>
+            {{profile_form.website}}<br>
+        </table>
+        <input type="submit" value="修改資料">
+    </form>
+</div>
+
+
+{% endblock %}
+
+

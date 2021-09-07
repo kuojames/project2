@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}登入{% endblock %}
+
+{% block content %}
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" align="center">
+                    <h3>登入我的私人日記</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="/login/" method="POST">
+        {% csrf_token %}
+        <table>
+            {{login_form.as_table}}
+        </table>
+        <input type="submit" value="送出"><br/>
+    </form>
+{% endblock %}

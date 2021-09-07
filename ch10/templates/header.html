@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand" align=center>分享日記</div>
+        </div>
+
+        {% load account %}
+        <ul class="nav navbar-nav">
+            <li class="activate"><a href="/home">Home</a></li>
+            
+            {% if user.is_authenticated %}
+                <li><a href="/vote_item">投票</a></li>
+                <li><a href="/logout">登出</a></li>
+            {% else %}
+                <li><a href="/login">登入</a></li>
+                <li><a href="{% url 'account_signup' %}">註冊</a></li>
+            {% endif %}
+            
+            <li><a href="/admin">後臺管理</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+

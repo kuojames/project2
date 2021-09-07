@@ -1,0 +1,35 @@
+<h2 style="color:#f9f9f9" align="center">偵測音訊</h2>
+        <div id="set1" class="row" align="center">
+
+        </div>
+
+        <div id='report' class="panel panel-default">
+                <div class="panel-heading" style="text-align:center">偵測報告</div>
+                <div class="panel-body">
+                    IP : 120.192.98.113<br>
+                    Name : 張小乖<br>
+                    情緒 : 難過<br>
+                    <img src='/static/images/cry.jpg' width='150' align='center'>
+                </div>
+        </div>
+
+        <div id="set2" class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" align="center">機率圖</div>
+                    <div class="panel-body"><img src='/static/images/p1.jpg' width='300'></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" align="center">統計圖</div>
+                    <div class="panel-body" align="center"><img src='/static/images/p2.png' width='350'></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading" align="center">趨勢圖</div>
+                    <div class="panel-body" align="center"><img src='/static/images/p3.png' width='300'></div>
+                </div>
+            </div>
+        </div>
