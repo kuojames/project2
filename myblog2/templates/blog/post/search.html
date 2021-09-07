@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% load blog_tags %}
+
+{% block title %}Search{% endblock %}
+
+{% block content %}
+    {% if query %} <!--查詢結果-->
+        <h1>Post Containing {{query}}</h1>
+        <h3> <!--查詢數量-->
+            {% with results.count as total_results %}
+                Found {{total_results}} result {{total_result | pluralize}}
+            {% endwith %}
+        </h3>
+        {% for post in results %} <!--查詢的內容-->
+            <h4><a href="{{post.get_absolute_url}}">{{post.title}}</a></h4>
+            {{post.body|markdown|truncatewords_html:5}}
+        {% empty %} <!--沒有查詢內容-->
+            <p>There are not result for your query</p>
+        {% endfor %}
+    {% else %} <!--剛開始查詢-->
+        <h1>Search for posts</h1>
+        <form method="get">
+            {{form.as_p}}
+            <input type='submit' value='Search'>
+        </form>
+    {% endif %}
+{% endblock %}
